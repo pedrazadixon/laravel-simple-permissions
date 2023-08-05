@@ -10,6 +10,7 @@ class PermissionsController
 {
     public function index(Roles $rol)
     {
+        $controllers = [];
         $routeCollection = Route::getRoutes();
         foreach ($routeCollection as $route) {
             if (in_array('permissions', $route->middleware())) {
