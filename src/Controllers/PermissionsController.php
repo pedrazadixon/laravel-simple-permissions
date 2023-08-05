@@ -20,6 +20,7 @@ class PermissionsController
                     $controller = explode('@', $route->getAction()['controller'])[0];
                     $method = explode('@', $route->getAction()['controller'])[1];
                     $controller = str_replace('App\Http\Controllers\\', '', $controller);
+                    $controller = str_replace('Pedrazadixon\LaravelSimplePermissions\Controllers\\', 'LaravelSimplePermissions\\', $controller);
                     $controllers[$controller][] = [
                         'name' => $method,
                         'action' => $route->getAction()['controller'],
