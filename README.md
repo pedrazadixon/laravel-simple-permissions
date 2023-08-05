@@ -24,6 +24,15 @@ Finish the installation with the following command:
 php artisan laravel-simple-permissions:install
 ```
 
+Add the following provider to your providers array in config\app.php:
+    
+```php
+'providers' => [
+    ...
+    Pedrazadixon\LaravelSimplePermissions\Providers\LaravelSimplePermissionsProvider::class,
+],
+```
+
 ## Usage
 
 ### Creating permissions
