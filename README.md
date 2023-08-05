@@ -18,12 +18,6 @@ You can install the package via composer:
 composer require pedrazadixon/laravel-simple-permissions
 ```
 
-Finish the installation with the following command:
-
-```bash
-php artisan laravel-simple-permissions:install
-```
-
 Add the following provider to your providers array in config\app.php:
     
 ```php
@@ -33,10 +27,27 @@ Add the following provider to your providers array in config\app.php:
 ],
 ```
 
+Finish the installation with the following command:
+
+```bash
+php artisan laravel-simple-permissions:install
+```
+
 ## Usage
+
+### Add **permissions** middleware to routes, for example:
+```php
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified', 'permissions'])->name('dashboard');
+```
+
 
 ### Creating permissions
 
 You can create permissions navigate the following route:
 
 - http://your-app.test/roles
+
+
+
