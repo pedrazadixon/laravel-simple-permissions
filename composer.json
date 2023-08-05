@@ -1,0 +1,15 @@
+{
+    "name": "pedrazadixon/laravel-simple-permissions",
+    "autoload": {
+        "psr-4": {
+            "Pedrazadixon\\LaravelSimplePermissions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dixon Pedraza",
+            "email": "pedrazadixon@gmail.com"
+        }
+    ],
+    "require": {}
+}
