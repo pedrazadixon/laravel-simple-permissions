@@ -14,7 +14,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'laravel-simple-permisions:install';
+    protected $signature = 'laravel-simple-permissions:install';
 
     /**
      * The console command description.
