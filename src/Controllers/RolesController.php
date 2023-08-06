@@ -40,13 +40,6 @@ class RolesController
         return redirect()->route('roles.index', $rol->id)->with('status', 'role-updated');
     }
 
-    public function destroy(Roles $rol)
-    {
-        $rol->permissions()->delete();
-        $rol->delete();
-        return redirect()->route('roles.index')->with('status', 'role-deleted');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -62,6 +55,17 @@ class RolesController
 
         $rol->save();
 
-        return redirect()->route('permissions.index', $rol->id)->with('status', 'role-created');
+        return redirect()->route('permissions.index', $rol->id)->with('status', 'Role created, please add permissions.');
+    }
+
+    public function destroy(Roles $rol)
+    {
+        // check if role has users
+        if ($rol->users()->count() > 0)
+            return redirect()->route('roles.index')->with('status', 'Role has users, cannot be deleted.');
+
+        $rol->permissions()->delete();
+        $rol->delete();
+        return redirect()->route('roles.index')->with('status', 'role-deleted');
     }
 }
