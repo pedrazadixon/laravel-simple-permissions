@@ -37,7 +37,7 @@ class RolesController
 
         $rol->save();
 
-        return redirect()->route('roles.index', $rol->id)->with('status', 'role-updated');
+        return redirect()->route('roles.index', $rol->id)->with('status', 'Role updated.');
     }
 
     public function store(Request $request)
@@ -66,6 +66,6 @@ class RolesController
 
         $rol->permissions()->delete();
         $rol->delete();
-        return redirect()->route('roles.index')->with('status', 'role-deleted');
+        return redirect()->route('roles.index')->with('status', 'Role deleted.');
     }
 }
