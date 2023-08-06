@@ -29,20 +29,30 @@ class InstallCommand extends Command
     public function handle()
     {
         if (!class_exists('App\Http\Controllers\Auth\AuthenticatedSessionController')) {
-            return $this->error('Laravel\'s auth is not installed. pleace check https://laravel.com/docs/10.x/starter-kits#laravel-breeze');
+            return $this->error('Laravel\'s authentication features are not installed. Please check https://laravel.com/docs/10.x/starter-kits#laravel-breeze-installation');
         }
 
         Artisan::call('migrate');
 
         $this->line(Artisan::output());
 
-        $this->line('Creating Super Admin role');
-
+        $this->line('Creating Super Admin role...');
         if (DB::table('roles')->insertOrIgnore([
             'id' => 1,
             'name' => 'Super Admin',
             'description' => 'Has all permissions',
         ])) {
+
+            $this->line('Creating User role...');
+            DB::table('roles')->insertOrIgnore([
+                'id' => 2,
+                'name' => 'User',
+                'description' => 'Default role for all users',
+            ]);
+
+            $this->line('Updating first user with Super Admin role...');
+            DB::table('users')->orderBy('id')->limit(1)->update(['role_id' => 1]);
+
             $this->info('Install successful');
         } else {
             $this->warn('Already Installed or Install failed');
