@@ -1,5 +1,12 @@
 {
     "name": "pedrazadixon/laravel-simple-permissions",
+    "description": "A simple package to manage permissions in Laravel",
+    "keywords": [
+        "laravel",
+        "permissions",
+        "roles"
+    ],
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Pedrazadixon\\LaravelSimplePermissions\\": "src/"
