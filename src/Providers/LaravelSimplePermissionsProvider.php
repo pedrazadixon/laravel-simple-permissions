@@ -28,5 +28,9 @@ class LaravelSimplePermissionsProvider extends ServiceProvider
             'permissions',
             \Pedrazadixon\LaravelSimplePermissions\Middleware\Permissions::class
         );
+
+        $this->publishes([
+            __DIR__ . '/../views/' => resource_path('views/vendor/laravel-simple-permissions'),
+        ], 'laravel-simple-permissions-views');
     }
 }

@@ -50,4 +50,10 @@ You can create permissions navigate the following route:
 - http://your-app.test/roles
 
 
+### Publish views (optional)
 
+You can publish the views with:
+
+```bash
+php artisan vendor:publish --tag=laravel-simple-permissions-views
+```
