@@ -53,7 +53,7 @@
                                             <form class="inline-block" action="{{ route('roles.destroy', $rol->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <button type="submit" class="ml-1 inline-flex items-center px-2 py-1 bg-red-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-300 focus:bg-red-300 active:bg-red-700 focus:outline-none transition ease-in-out duration-150">Delete</button>
+                                                <button type="submit" class="ml-1 inline-flex items-center px-2 py-1 bg-red-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-300 focus:bg-red-300 active:bg-red-700 focus:outline-none transition ease-in-out duration-150" style="background-color: red;">Delete</button>
                                             </form>
                                         </div>
                                         @endif
