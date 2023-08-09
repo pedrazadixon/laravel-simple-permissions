@@ -8,6 +8,12 @@ Laravel Simple Permissions is a lightweight library designed to simplify permiss
 - Assign and validate permissions on users.
 - Supports Laravel's built-in user authentication system.
 
+## Requirements
+
+- PHP >= 7.3
+- Laravel >= 8.0
+- Laravel Breeze (Laravel's authentication features)
+
 ## Installation
 
 Laravel Simple Permissions works with Laravel's authentication features. Please install this before install Laravel Simple Permissions. You can follow instructions here: https://laravel.com/docs/10.x/starter-kits#laravel-breeze 
