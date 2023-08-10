@@ -16,21 +16,12 @@ Laravel Simple Permissions is a lightweight library designed to simplify permiss
 
 ## Installation
 
-Laravel Simple Permissions works with Laravel's authentication features. Please install this before install Laravel Simple Permissions. You can follow instructions here: https://laravel.com/docs/10.x/starter-kits#laravel-breeze 
+Laravel Simple Permissions works with Laravel's authentication features. Please install this before install Laravel Simple Permissions. You can follow instructions here: https://laravel.com/docs/10.x/starter-kits#laravel-breeze
 
 You can install the package via composer:
 
 ```bash
 composer require pedrazadixon/laravel-simple-permissions
-```
-
-Add the following provider to your providers array in config\app.php:
-    
-```php
-'providers' => [
-    ...
-    Pedrazadixon\LaravelSimplePermissions\Providers\LaravelSimplePermissionsProvider::class,
-],
 ```
 
 Finish the installation with the following command:
