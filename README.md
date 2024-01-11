@@ -54,3 +54,13 @@ You can publish the views with:
 ```bash
 php artisan vendor:publish --tag=laravel-simple-permissions-views
 ```
+
+### To use validation directive
+
+You can validate whether the logged-in user has permissions for a route with the following directive:
+
+```php
+@hasPermission('route_name')
+    // Your HTML code here.
+@endHasPermission
+```
