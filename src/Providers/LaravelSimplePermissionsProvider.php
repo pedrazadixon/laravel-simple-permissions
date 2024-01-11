@@ -4,6 +4,7 @@ namespace Pedrazadixon\LaravelSimplePermissions\Providers;
 
 use Pedrazadixon\LaravelSimplePermissions\Console\Commands\InstallCommand;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class LaravelSimplePermissionsProvider extends ServiceProvider
 {
@@ -32,5 +33,13 @@ class LaravelSimplePermissionsProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../views/' => resource_path('views/vendor/laravel-simple-permissions'),
         ], 'laravel-simple-permissions-views');
+
+        Blade::directive('hasPermission', function($route_name){
+            return "<?php if(app(Pedrazadixon\LaravelSimplePermissions\Models\User::class)->canDo({$route_name})): ?>";
+        });
+    
+        Blade::directive('endHasPermission', function(){
+            return "<?php endif; ?>";
+        });
     }
 }
