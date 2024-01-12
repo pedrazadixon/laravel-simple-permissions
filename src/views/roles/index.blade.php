@@ -63,7 +63,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                        <div class="d-flex align-items-center">
+                            {!! $roles->links() !!}
+                        </div>
                     </section>
 
                 </div>
