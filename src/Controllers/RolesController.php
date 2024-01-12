@@ -9,8 +9,8 @@ class RolesController
 {
     public function index()
     {
-        $roles = Roles::all();
-        return view('laravel-simple-permissions::roles.index', compact('roles'));
+        $roles = Roles::latest()->paginate(10);
+        return view('laravel-simple-permissions::roles.index', compact('roles'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     public function create(Request $request)
